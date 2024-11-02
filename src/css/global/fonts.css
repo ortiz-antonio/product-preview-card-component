@@ -1,0 +1,5 @@
+/* @font-face here */
+@font-face {
+  font-family: shantell;
+  src: url('../fonts/ShantellSans[BNCE,INFM,SPAC,ital,wght].woff2') format('woff');
+}

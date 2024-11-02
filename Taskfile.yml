@@ -1,0 +1,77 @@
+version: '3'
+
+includes:
+  dev: ./taskfiles/dev.yaml
+
+  build: ./taskfiles/prod.yaml
+
+tasks:
+  default:
+    - task -a
+
+  deploy:
+    deps: [format, build]
+    cmds:
+      - git add -f dist
+      - git commit -m "Temp commit for deploy" --no-verify
+      - git push origin `git subtree split --prefix dist main`:refs/heads/deploy --force
+      - git reset HEAD~1
+
+  setup:
+    cmds:
+      - curl https://get.volta.sh | bash
+      - volta install node
+      - volta install pnpm
+
+  install:
+    source: package.json
+    generates:
+      - pnpm-lock.yaml
+    cmds:
+      - echo "Installing package.json deps"
+      - pnpm install
+
+  # check:commits:
+  #   silent: true
+  #   cmds:
+  #     - |
+  #       if [[ -n $(git status --porcelain) ]]; then
+  #         echo "Error: There are uncommitted changes in your Git repository."
+  #         exit 1
+  #       fi
+
+  clean:
+    cmds:
+      - rm -rf ./dist
+      - mkdir ./dist
+
+  format:
+    sources:
+      - src/_includes/**/*.{njk}
+      - src/css/**/*.css
+    generates:
+      - dist/css/*.css
+      - dist/*.html
+    deps:
+      - lint
+      - prettier
+
+  lint:
+    sources:
+      - src/_includes/**/*.{njk}
+      - src/css/**/*.css
+
+    cmds:
+      - pnpm stylelint src/css/**/*.css --fix
+
+  prettier:
+    sources:
+      - src/_includes/**/*.{njk}
+      - src/css/**/*.css
+    cmds:
+      - pnpm prettier ./ --write
+
+  utopia:
+    cmds:
+      - node utopia.local/src/index.js
+      - pnpm prettier src/design-tokens/
