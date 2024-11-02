@@ -1,5 +1,20 @@
-/* @font-face here */
 @font-face {
-  font-family: shantell;
-  src: url('../fonts/ShantellSans[BNCE,INFM,SPAC,ital,wght].woff2') format('woff');
+  font-family: montserrat;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: montserrat;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: fraunces;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Fraunces_9pt-Bold.ttf');
 }

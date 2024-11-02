@@ -1,11 +1,21 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-  <article class="flow">
-    <h1>{{ title }}</h1>
-
-    <div class="switcher">
-      <h2 class="text-primary">{{ subtitle }}</h2>
-      <p>{{ summary }}</p>
+  <article class="product switcher flow">
+    <picture class="product__art">
+      <source media="(min-width:38.375rem)" srcset="{{ art_desktop }}" />
+      <img src="{{ art }}" alt="" class="product__art--img" />
+    </picture>
+    <div class="product__content flow">
+      <span class="product__content--category">{{ category }}</span>
+      <h1 class="product__content--title">{{ title }}</h1>
+      <p class="product__content--summary">{{ summary }}</p>
+      <div class="product__content--price">
+        <span class="product__content--price--actual">{{ price }}</span
+        ><span class="product__content--price--before">{{ discount }}</span>
+      </div>
+      <button class="product__content--cta flex">
+        <span class="ico-cart"></span> Add to Cart
+      </button>
     </div>
   </article>
 {% endblock %}
