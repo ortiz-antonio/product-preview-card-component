@@ -1,8 +1,8 @@
 :root {
-  --gutter: var(--space-xs-m);
+  --gutter: var(--space-s);
   --leading-standard: 1.5;
   --radius-s: 8px;
   --radius-m: 10px;
-  --flow-space: 1rem;
-  --wrapper-max-width: 50rem;
+  --flow-space: 0.5em;
+  --wrapper-max-width: 44rem;
 }

@@ -6,10 +6,11 @@
 
 .product__art {
 }
+
 .product__content {
-  /* box-sizing: border-box; */
   /* padding: 2rem; */
-  place-content: center;
+
+  place-content: space-around;
 }
 
 .product__content--category {

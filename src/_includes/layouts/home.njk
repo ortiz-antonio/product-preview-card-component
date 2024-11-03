@@ -2,10 +2,10 @@
 {% block content %}
   <article class="product grid" data-layout="halves">
     <picture class="product__art">
-      <source media="(min-width:37.5rem)" srcset="{{ art_desktop }}" />
+      <source media="(min-width:39rem)" srcset="{{ art_desktop }}" />
       <img src="{{ art }}" alt="" class="product__art--img" />
     </picture>
-    <div class="product__content flow">
+    <div class="product__content flow wrapper">
       <span class="product__content--category">{{ category }}</span>
       <h1 class="product__content--title">{{ title }}</h1>
       <p class="product__content--summary">{{ summary }}</p>
