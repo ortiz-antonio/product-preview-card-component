@@ -5,14 +5,10 @@
 }
 
 .product__art {
-  object-fit: container;
 }
-
 .product__content {
-  padding: 1rem;
-  padding-left: 0;
-  place-self: center;
-  max-inline-size: 100%;
+  /* box-sizing: border-box; */
+  /* padding: 2rem; */
 }
 
 .product__content--category {
@@ -23,7 +19,7 @@
 .product__content--title {
   font-family: var(--font-title);
   color: var(--color-accent);
-  font-size: var(--size-step-3);
+  font-size: var(--size-step-2);
   margin: 0;
 }
 

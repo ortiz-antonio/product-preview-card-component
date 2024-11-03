@@ -30,5 +30,5 @@ to change how empty grid tracks are handled */
 
 .grid[data-layout='halves'] {
   --grid-placement: auto-fit;
-  --grid-min-item-size: clamp(6rem, 50vh, 17.918rem);
+  --grid-min-item-size: clamp(6rem, 50vh, 16.5068125rem);
 }
