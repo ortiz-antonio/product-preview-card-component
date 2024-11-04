@@ -10,6 +10,7 @@ tasks:
     - task -a
 
   deploy:
+    deps: [install]
     cmds:
       - task clean
       - task build
