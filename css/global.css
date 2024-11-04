@@ -195,7 +195,7 @@ body {
   padding-inline: var(--space-3xs);
 
   /* stylelint-disable-next-line media-query-no-invalid */
-  @media (width >= 623px) {
+  @media (width >= 624px) {
     --wrapper-max-width: 44rem;
   }
 }
