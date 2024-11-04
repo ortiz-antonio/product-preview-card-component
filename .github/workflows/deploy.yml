@@ -18,9 +18,8 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Taskfile - Deploy
         run: task deploy
-      - name: Deploy to Production
-        uses: actions/deploy-pages@v2
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: dist
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
