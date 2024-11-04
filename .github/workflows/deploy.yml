@@ -15,12 +15,12 @@ jobs:
         uses: arduino/setup-task@v2
         with:
           version: 3.x
-          repo-token: ${{ secrets.token }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Taskfile - Deploy
         run: task deploy
       - name: Deploy to Production
         uses: actions/deploy-pages@v2
         with:
-          github_token: ${{ secrets.token }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: dist
