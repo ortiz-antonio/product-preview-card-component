@@ -10,12 +10,11 @@ tasks:
     - task -a
 
   deploy:
-    deps: [format, build]
     cmds:
-      - git add -f dist
-      - git commit -m "Temp commit for deploy" --no-verify
-      - git push origin `git subtree split --prefix dist main`:refs/heads/deploy --force
-      - git reset HEAD~1
+      - task build
+      - task format
+      - task lint
+      - echo "Deployment ready. Trigger GitHub Actions workflow."
 
   setup:
     cmds:
