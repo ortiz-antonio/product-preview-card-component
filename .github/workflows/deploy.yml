@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
       - name: Install Task
         uses: arduino/setup-task@v2
         with:

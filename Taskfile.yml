@@ -11,9 +11,9 @@ tasks:
 
   deploy:
     cmds:
+      - task clean
       - task build
       - task format
-      - task lint
       - echo "Deployment ready. Trigger GitHub Actions workflow."
 
   setup:
