@@ -22,6 +22,11 @@ tasks:
       - echo "Installing package.json deps"
       - pnpm install
 
+  build:
+    deps: [clean, install]
+    cmds:
+      - task build:default
+
   clean:
     cmds:
       - rm -rf ./dist
