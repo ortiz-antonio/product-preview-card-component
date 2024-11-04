@@ -2,20 +2,11 @@ version: '3'
 
 includes:
   dev: ./taskfiles/dev.yaml
-
-  build: ./taskfiles/prod.yaml
+  build: ./taskfiles/build.yaml
 
 tasks:
   default:
     - task -a
-
-  deploy:
-    deps: [install]
-    cmds:
-      - task clean
-      - task build
-      - task format
-      - echo "Deployment ready. Trigger GitHub Actions workflow."
 
   setup:
     cmds:
@@ -30,15 +21,6 @@ tasks:
     cmds:
       - echo "Installing package.json deps"
       - pnpm install
-
-  # check:commits:
-  #   silent: true
-  #   cmds:
-  #     - |
-  #       if [[ -n $(git status --porcelain) ]]; then
-  #         echo "Error: There are uncommitted changes in your Git repository."
-  #         exit 1
-  #       fi
 
   clean:
     cmds:

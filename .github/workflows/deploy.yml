@@ -16,8 +16,8 @@ jobs:
         with:
           version: 3.x
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Run Taskfile - Deploy
-        run: task deploy
+      - name: Run Taskfile - build
+        run: task build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
