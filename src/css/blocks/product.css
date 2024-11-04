@@ -5,8 +5,6 @@
 }
 
 .product__content {
-  /* padding: 2rem; */
-
   place-content: space-around;
 }
 
