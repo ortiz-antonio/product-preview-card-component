@@ -2,17 +2,19 @@
 {% block content %}
   <div class="product grid" data-layout="halves">
     <picture class="product__art">
-      <source media="(min-width:39rem)" srcset="{{ art_desktop }}"  alt=""/>
-      <img src="{{ art }}" alt="" class="product__art--img" alt=""/>
+      <source media="(min-width:39rem)" srcset="{{ art_desktop }}" alt="" />
+      <img src="{{ art }}" alt="" class="product__art--img" alt="" />
     </picture>
     <div class="product__content flow wrapper">
-      <span class="product__content--category">{{ category }}</span>
-      <h2 class="product__content--title">{{ title }}</h2>
+      <hgroup class="flow">
+        <p class="product__content--category">{{ category }}</p>
+        <h2 class="product__content--title">{{ title }}</h2>
+      </hgroup>
       <p class="product__content--summary">{{ summary }}</p>
-      <div class="product__content--price">
+      <p class="product__content--price">
         <span class="product__content--price--actual">{{ price }}</span
         ><s class="product__content--price--before">{{ discount }}</s>
-      </div>
+      </p>
       <button class="product__content--cta flex">
         <span class="ico-cart"></span> Add to Cart
       </button>
