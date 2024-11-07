@@ -37,7 +37,6 @@
 
 .product__content--price--before {
   font-size: var(--size-step-0);
-  text-decoration: line-through;
   margin-left: 0.4em;
 }
 
