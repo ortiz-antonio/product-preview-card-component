@@ -27,7 +27,10 @@
   </head>
   <body>
     <div class="container wrapper">
-      <main>{% block content %}{% endblock %}</main>
+      <main>
+        <h1 class="visually-hidden">Store with product cards</h1>
+        {% block content %}{% endblock %}
+      </main>
       <footer>
         <p class="attribution">
           <span
