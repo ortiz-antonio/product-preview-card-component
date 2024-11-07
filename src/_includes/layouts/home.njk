@@ -12,8 +12,9 @@
       </hgroup>
       <p class="product__content--summary">{{ summary }}</p>
       <p class="product__content--price">
-        <span class="product__content--price--actual">{{ price }}</span
-        ><s class="product__content--price--before">{{ discount }}</s>
+        <span class="product__content--price--actual">{{ price }}</span>
+        <span class="visually-hidden">Price without discount</span>
+        <s class="product__content--price--before"> {{ discount }} </s>
       </p>
       <button class="product__content--cta flex">
         <span class="ico-cart"></span> Add to Cart
