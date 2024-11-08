@@ -272,6 +272,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: var(--space-3xs);
 
   &:hover {
     background: var(--color-primary-darker);
@@ -282,9 +283,7 @@ body {
   }
 }
 
-.ico-cart {
-  background: url('../images/icon-cart.svg') no-repeat;
-  display: inline-block;
+.product__content--ico {
   width: var(--size-step-1);
   height: var(--size-step-1);
   color: var(--color-background-accent);
